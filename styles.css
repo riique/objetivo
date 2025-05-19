@@ -1605,4 +1605,286 @@ footer::before {
         align-items: flex-start;
         gap: 10px;
     }
+}
+
+/* Elementos da página de exames */
+.exam-container {
+    margin-bottom: 40px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-soft);
+    background-color: var(--card-bg-glass);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    animation: staggeredFadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.exam-container:nth-child(2) { animation-delay: 0.1s; }
+.exam-container:nth-child(3) { animation-delay: 0.2s; }
+.exam-container:nth-child(4) { animation-delay: 0.3s; }
+.exam-container:nth-child(5) { animation-delay: 0.4s; }
+.exam-container:nth-child(6) { animation-delay: 0.5s; }
+
+.exam-header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.15);
+}
+
+.exam-header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.exam-header h2, .exam-header .exam-info {
+    position: relative;
+    z-index: 2;
+}
+
+.exam-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: var(--heading-font);
+    margin: 0;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.exam-header h2 i {
+    font-size: 1.4rem;
+}
+
+.exam-header .exam-info {
+    font-size: 1rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.exam-content {
+    padding: 30px;
+}
+
+.exam-item {
+    margin-bottom: 20px;
+    padding: 22px 24px;
+    border-radius: var(--border-radius);
+    background-color: rgba(var(--primary-color-rgb), 0.03);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.08);
+    transition: all 0.3s ease;
+}
+
+.exam-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.1);
+    background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.exam-item:last-child {
+    margin-bottom: 0;
+}
+
+.exam-name {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.exam-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.exam-note {
+    margin-top: 25px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(var(--accent-color-rgb), 0.1), rgba(var(--accent-color-rgb), 0.05));
+    border-radius: var(--border-radius);
+    color: var(--accent-color);
+    font-weight: 600;
+    border: 1px solid rgba(var(--accent-color-rgb), 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.exam-note i {
+    font-size: 1.2rem;
+}
+
+.exams-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.exams-button i {
+    font-size: 20px;
+}
+
+/* Recomendações */
+.recommendations-container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-soft);
+    background-color: var(--card-bg-glass);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    animation: staggeredFadeIn 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+.recommendations-header {
+    background: var(--secondary-gradient);
+    color: white;
+    padding: 25px 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(var(--secondary-color-rgb), 0.15);
+}
+
+.recommendations-header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.recommendations-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: var(--heading-font);
+    margin: 0;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.recommendations-content {
+    padding: 30px;
+}
+
+.recommendation-item {
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    background-color: rgba(var(--secondary-color-rgb), 0.03);
+    border: 1px solid rgba(var(--secondary-color-rgb), 0.08);
+    transition: all 0.3s ease;
+}
+
+.recommendation-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(var(--secondary-color-rgb), 0.1);
+    background-color: rgba(var(--secondary-color-rgb), 0.05);
+}
+
+.recommendation-item:last-child {
+    margin-bottom: 0;
+}
+
+.recommendation-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.recommendation-text {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.recommendation-text ul {
+    margin-top: 12px;
+    margin-left: 20px;
+}
+
+.recommendation-text li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.recommendation-text li:before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+}
+
+/* Responsividade para a página de exames */
+@media (max-width: 768px) {
+    .exam-header, .recommendations-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .exam-header .exam-info {
+        align-self: flex-start;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .exam-item {
+        padding: 18px;
+    }
+    
+    .recommendation-item {
+        padding: 20px;
+    }
+    
+    .recommendation-title {
+        font-size: 1.1rem;
+    }
+    
+    .recommendation-text {
+        font-size: 0.95rem;
+    }
 } 
