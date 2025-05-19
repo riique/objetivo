@@ -1074,25 +1074,29 @@ footer::before {
         font-size: 1.1rem;
     }
     
-    .meal-header {
+    .meal-header, .workout-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
-        padding: 25px;
+        padding: 20px;
     }
     
-    .meal-header .macro-info {
+    .meal-header .macro-info, .workout-header .workout-info {
         align-self: flex-start;
+        width: 100%;
+        text-align: left;
     }
     
-    .food-item {
+    .food-item, .exercise-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
+        padding: 18px;
     }
     
-    .food-macros {
+    .food-macros, .exercise-details {
         justify-content: flex-start;
+        width: 100%;
     }
     
     .option-total {
@@ -1103,34 +1107,182 @@ footer::before {
     
     .macro-summary {
         justify-content: center;
+        gap: 15px;
     }
     
     .macro-item {
-        min-width: 140px;
-        padding: 20px 15px;
+        min-width: 125px;
+        max-width: 140px;
+        padding: 15px 10px;
     }
     
     .floating-buttons {
         bottom: 20px;
         right: 20px;
+        gap: 12px;
     }
     
     .floating-button {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
     
-    .meal-plan-table {
+    .meal-plan-table, .schedule-table {
         margin: 15px -15px;
         width: calc(100% + 30px);
+        overflow-x: auto;
     }
     
-    .meal-plan-table table {
+    .meal-plan-table table, .schedule-table table {
+        font-size: 0.8rem;
+        min-width: 600px;
+    }
+    
+    .meal-plan-table th, .meal-plan-table td, 
+    .schedule-table th, .schedule-table td {
+        padding: 10px 8px;
+    }
+    
+    .header-buttons {
+        top: 15px;
+        right: 15px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .header-button, .theme-toggle {
+        height: 45px;
+        padding: 0 16px;
+        font-size: 0.9rem;
+    }
+    
+    .header-button i, .theme-toggle i {
+        font-size: 16px;
+    }
+    
+    .theme-toggle {
+        width: 45px;
+    }
+    
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .summary {
+        padding: 30px 20px;
+        margin: -60px auto 40px;
+    }
+    
+    .summary h2 {
+        font-size: 1.8rem;
+    }
+    
+    .meal-container, .workout-container {
+        margin-bottom: 40px;
+    }
+    
+    .meal-header h2, .workout-header h2, .instructions-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .options-tabs {
+        gap: 5px;
+        padding: 5px;
+    }
+    
+    .option-tab {
+        padding: 12px 15px;
+        min-width: 100px;
         font-size: 0.8rem;
     }
     
-    .meal-plan-table th, .meal-plan-table td {
-        padding: 10px 8px;
+    .food-name, .exercise-name {
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .food-macro {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        margin: 2px;
+    }
+    
+    .exercise-sets, .exercise-reps, .exercise-duration {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    
+    .instruction-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .instruction-title {
+        font-size: 1rem;
+    }
+    
+    .instruction-text {
+        font-size: 0.9rem;
+    }
+    
+    /* Adicionar espaço para toque */
+    .exercise-item, .food-item, .option-tab, .floating-button, .header-button, .theme-toggle {
+        touch-action: manipulation;
+    }
+    
+    /* Melhorar legibilidade em dispositivos móveis */
+    .option-content {
+        padding: 25px 15px;
+    }
+    
+    .workout-content, .instructions-content {
+        padding: 20px 15px;
+    }
+}
+
+/* Responsividade para dispositivos muito pequenos */
+@media (max-width: 375px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .macro-item {
+        min-width: 110px;
+        max-width: 130px;
+        padding: 12px 8px;
+    }
+    
+    .macro-value {
+        font-size: 2.2rem;
+    }
+    
+    .header-buttons {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .header-button, .theme-toggle {
+        height: 40px;
+    }
+    
+    .header-button {
+        padding: 0 12px;
+        font-size: 0.85rem;
+    }
+    
+    .theme-toggle {
+        width: 40px;
     }
 }
 
